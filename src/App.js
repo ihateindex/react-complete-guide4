@@ -1,20 +1,17 @@
 import { React, useState } from 'react';
-import AddUser from './components/AddUser/AddUser';
-import UsersList from './components/UsersList/UsersList';
-import ErrorModal from './components/ErrorModal/ErrorModal';
+import AddUser from './components/Users/AddUser/AddUser';
+import UsersList from './components/Users/UsersList/UsersList';
+import ErrorModal from './components/UI/ErrorModal/ErrorModal';
 
 function App() {
     const [userList, setUserList] = useState([]);
     const [error, setError] = useState('');
     const addUserHandler = (userData) => {
-        console.log(userData);
         setUserList((prevData) => {
             return [...prevData, userData];
         });
-        console.log(userList);
     };
     const errorHandler = (error) => {
-        console.log(error);
         setError(error);
     };
 
